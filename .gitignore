@@ -1,0 +1,7 @@
+# Este archivo le dice a Git que IGNORE el .env
+# Así tus contraseñas nunca llegan a GitHub
+node_modules/
+.env
+.env.local
+*.log
+ngrok.exe
