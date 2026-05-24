@@ -1,39 +1,87 @@
-# Xawak Bot — WhatsApp Business Bot
+# Xawak AI Tourism Platform 🌎
 
-Bot conversacional para registro de proveedores turísticos vía WhatsApp Business API.
+> AI-powered tourism platform integrating WhatsApp chatbot, 
+> Supabase and scalable web services for provider onboarding 
+> and customer experiences.
 
-## ¿Qué hace?
-- Recibe proveedores por WhatsApp y guarda su información automáticamente
-- Flujo conversacional de 8 pasos (tipo de servicio, ubicación, tarifas, etc.)
-- Guarda los datos en Supabase (PostgreSQL)
-- Preparado para escalar a flujo B2C (clientes viajeros)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Stack](https://img.shields.io/badge/stack-Node.js%20%7C%20Supabase%20%7C%20WhatsApp%20API-blue)
+![Sprint](https://img.shields.io/badge/sprint-1%20completado-orange)
 
-## Stack tecnológico
-- **Node.js** + Express — servidor del bot
-- **WhatsApp Business API** (Meta Cloud API) — canal de mensajería
-- **Supabase** (PostgreSQL) — base de datos
-- **Railway** — despliegue en producción *(próximamente)*
+---
 
-## Estructura del proyecto
-src/
-├── index.js              — servidor principal
-├── handlers/
-│   ├── mensajes.js       — lógica de conversación
-│   └── whatsapp.js       — funciones de envío
-├── flujos/
-│   └── b2b.js            — flujo para proveedores
-└── lib/
-└── supabase.js       — conexión a base de datos
-## Variables de entorno necesarias
-Crea un archivo `.env` con estas variables:
+## Overview
+
+Xawak is a real tourism agency. This platform automates two 
+core processes:
+
+1. **Provider onboarding** — tourism providers register via 
+   WhatsApp chatbot (hotels, tours, transport, restaurants)
+2. **Customer experience** — travelers receive AI-generated 
+   trip proposals built from the provider catalog *(coming soon)*
+
+---
+
+## Architecture
+WhatsApp Business API
+↓
+Node.js Bot (Express)
+↓
+Supabase (PostgreSQL)
+↑
+Lovable Web Panel (admin)
+
+---
+
+## Tech Stack
+
+| Layer       | Technology              |
+|-------------|-------------------------|
+| Chatbot     | Node.js + Express       |
+| Messaging   | WhatsApp Business API   |
+| Database    | Supabase (PostgreSQL)   |
+| Frontend    | Lovable + React         |
+| Deployment  | Railway                 |
+| AI          | OpenAI (coming soon)    |
+
+---
+
+## Sprint Roadmap
+
+| Sprint | Goal                              | Status        |
+|--------|-----------------------------------|---------------|
+| 1      | B2B bot + Supabase database       | ✅ Completado  |
+| 2      | Railway deploy + Admin panel      | 🔨 En progreso |
+| 3      | AI over provider catalog          | ⬜ Pendiente   |
+| 4      | B2C customer flow                 | ⬜ Pendiente   |
+
+---
+
+## Local Setup
+
+```bash
+git clone https://github.com/AndreaBur/xawak-bot.git
+cd xawak-bot
+npm install
+cp .env.example .env   # fill in your credentials
+npm run dev
+```
+
+---
+
+## Environment Variables
+
 WHATSAPP_TOKEN=
 PHONE_NUMBER_ID=
 VERIFY_TOKEN=
 SUPABASE_URL=
 SUPABASE_KEY=
 PORT=3000
-## Cómo correr localmente
-```bash
-npm install
-npm run dev
-```
+
+---
+
+## Author
+
+**Andrea Burbano**  
+Building real software for real businesses.  
+[GitHub](https://github.com/AndreaBur)
